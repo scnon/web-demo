@@ -9,6 +9,7 @@
 <body>
     <div style="margin: 20px;">
         <form>
+            <h3>绑定汇旺账号</h3>
             <div class="form-group">
               <label for="exampleInputEmail1">汇旺用户名</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="例如: 张三">
@@ -24,7 +25,8 @@
     <script>
         Telegram.WebApp.ready();
         Telegram.WebApp.MainButton.setParams({
-            text: '提交'
+            text: '提交',
+            is_visible: true
         }).onClick(submit);
 
         function submit() {

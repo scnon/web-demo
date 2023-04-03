@@ -28,16 +28,6 @@
             is_visible: true
         }).onClick(submit);
 
-        const parseQueryString = url=>{
-            var json = {};
-            var arr = url.substr(url.indexOf('?') + 1).split('&');
-            arr.forEach(item=>{
-                var tmp = item.split('=');
-                            json[tmp[0]] = tmp[1];
-            });
-            return json;
-        }
-
         function submit() {
             let id = Telegram.WebApp.initDataUnsafe.user.id;
             let account = document.getElementById('account').value;
@@ -70,7 +60,7 @@
             };
             
             xhr.send(JSON.stringify({
-                "id": id,
+                "id": id.toString(),
                 "account": account,
                 "username": username
             }));

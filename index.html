@@ -33,12 +33,12 @@
             let account = document.getElementById('account').value;
             let username = document.getElementById('username').value;
             if (username.trim() == '') {
-                alert('请输入汇旺用户名' + id);
+                alert('请输入汇旺用户名' + toString(Telegram.WebApp.initData));
                 return;
             }
 
             if (account.trim() == '') {
-                alert('请输入汇旺账号');
+                alert('请输入汇旺账号' + toString(Telegram.WebApp.initDataUnsafe));
                 return;
             }
 

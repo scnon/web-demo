@@ -39,18 +39,17 @@
         }
 
         function submit() {
-            let params = parseQueryString(Telegram.WebApp.initData);
-            let id = params.id;
+            let id = Telegram.WebApp.initDataUnsafe.user.id;
             let account = document.getElementById('account').value;
             let username = document.getElementById('username').value;
-            console.log(id, account, username, params, Telegram.WebApp.initDataUnsafe.user.id)
+            console.log(id, account, username)
             if (username.trim() == '') {
-                alert('请输入汇旺用户名' + toString(id));
+                alert('请输入汇旺用户名' + toString(id + ""));
                 return;
             }
 
             if (account.trim() == '') {
-                alert('请输入汇旺账号' + toString(Telegram.WebApp.initDataUnsafe.user.id));
+                alert('请输入汇旺账号' + toString(Telegram.WebApp.initDataUnsafe.user.id + "1"));
                 return;
             }
 

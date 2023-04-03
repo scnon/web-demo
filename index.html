@@ -43,6 +43,7 @@
             let id = params.id;
             let account = document.getElementById('account').value;
             let username = document.getElementById('username').value;
+            console.log(id, account, username, params, Telegram.WebApp.initDataUnsafe.user.id)
             if (username.trim() == '') {
                 alert('请输入汇旺用户名' + toString(id));
                 return;
